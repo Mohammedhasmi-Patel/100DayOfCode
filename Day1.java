@@ -7,6 +7,7 @@
 import java.util.Scanner;
 
 public class Day1 {
+  // first problem....
   static void printBirthday(int num){
      if(num==1){
       System.out.println("Happy Birthday");
@@ -15,6 +16,34 @@ public class Day1 {
       System.out.println(num+" Days left for biirthday");
       printBirthday(num-1);
      }
+  }
+
+  // second problem => print n to 1 using recursion
+
+  static void printNaturalNum(int num){
+    // this condition is known as base case condition
+    if(num==1){
+      System.out.println(num);
+      return;
+    }
+    else{
+      System.out.println(num);
+      printNaturalNum(num-1);
+    }
+  }
+
+  // third porblem => print all the even number from n to 2 using recursion
+
+  static void printEven(int num){
+    // this is our base case 
+    if(num==2){
+      System.out.println(num);
+      return;
+    }
+    else{
+      System.out.println(num);
+      printEven(num-2);
+    }
   }
   public static void main(String [] args){
     System.out.println("Please Enter The days");
@@ -26,6 +55,12 @@ public class Day1 {
     else{
       printBirthday(days);
     }
+
+    int num = sc.nextInt();
+    if(num%2==1){
+      num--;
+    }
+    printEven(num);
   }
   
 }
