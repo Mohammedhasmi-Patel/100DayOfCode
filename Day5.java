@@ -1,3 +1,9 @@
+/* 
+      =>this programme is all about recursion in string.
+      => we will implement different concept like palindrome,reverse etc....
+ */
+
+
 public class Day5 {
   // check the given string is palindrome or not 
 
@@ -63,6 +69,40 @@ public class Day5 {
       return countCons(str, index-1);
     }
   }
+
+  // linear search using recursion 
+
+  static boolean linearSearch(int [] arr,int target,int index,int size){
+    // index traverse entire array but not found any value 
+    if(index==size){
+      return false;
+    }
+    if(arr[index]==target){
+      return true;
+    }
+    return linearSearch(arr, target, index+1, size);
+  }
+
+  // Binasry search implement 
+
+  static boolean binarySearch(int [] arr,int start,int end ,int target){
+    // base condition
+    if(start>end){
+      return false;
+    }
+    int mid = start+(end-start)/2;
+    if(arr[mid]==target){
+      return true;
+    }
+    // if middle element is less than 
+    else if(arr[mid]<target){
+       return binarySearch(arr, mid+1, end, target);
+    }
+    else{
+      return binarySearch(arr, start, mid-1, target);
+    }
+  }
+
   public static void main(String[] args) {
     String name = "Mohammed Hasmi";
     int ans = countCons(name, name.length()-1);
@@ -70,3 +110,4 @@ public class Day5 {
   }
   
 }
+  
