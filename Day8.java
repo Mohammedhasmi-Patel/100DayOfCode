@@ -26,6 +26,11 @@ public class Day8 {
     // right side 
     quickSort(arr, pivot+1, end);
   }
+
+  // subsequence related questions
+  
+
+
   public static void main(String[] args) {
       int [] arr = {4,5,12,3,85,66};
       quickSort(arr, 0, 5);

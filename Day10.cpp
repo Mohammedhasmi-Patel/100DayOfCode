@@ -28,6 +28,6 @@ void parent(int n, int left, int right, vector<string> &ans, string &temp)
 }
 int main()
 {
-
+  cout << "completed" << endl;
   return 0;
 }

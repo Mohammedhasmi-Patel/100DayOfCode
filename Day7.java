@@ -32,16 +32,8 @@ public class Day7 {
         }
 
 
-            // Copy the sorted values from temp back to the original array
-               for (int i = 0; i < temp.length; i++) {
-                     arr[start + i] = temp[i];
-                }
-
-
-
-
-        
-       
+      // Copy the sorted values from temp back to the original array
+      System.arraycopy(temp, 0, arr, start, temp.length);
   }
   static void mergeSort(int [] arr,int start,int end){
     // base case 
@@ -54,9 +46,6 @@ public class Day7 {
     mergeSort(arr, start, mid);
     mergeSort(arr, mid+1, end);
     merge(arr, start, mid, end);
-
-     
-    
   }
   public static void main(String[] args) {
      int [] arr = {6,4,7,2,9,8,3,5};
@@ -64,7 +53,5 @@ public class Day7 {
      for(int i=0;i<arr.length;i++){
       System.out.print(arr[i]+" ");
      }
-     
-     
   }
 }
