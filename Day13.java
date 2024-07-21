@@ -68,20 +68,70 @@ class MyStack {
     }
    }
    
-
 };
+
+class Node {
+  int data;
+  Node next;
+
+  public Node(int value){
+    this.data = value;
+    this.next = null;
+  }
+}
+
+class StackLL {
+  private Node top;
+  private  int size = 0;
+
+  public StackLL(){
+      this.top = null;
+  }
+
+  // Push the element into stack.
+  void push(int value){
+    // check that it is first node 
+    Node newNode = new Node(value);
+
+    if(top==null){
+      top = newNode;
+    }
+    else{
+      newNode.next = top;
+      top = newNode;
+    }
+    size++;
+  }
+  // pop the elemnt into stack
+  int pop(){
+    if(top==null){
+      System.out.println("Stack is empty.....");
+      return -1;
+    }
+    else{
+      int value = top.data;
+      top = top.next;
+      size--;
+      return value;
+    }
+  }
+  // size of the linked list 
+
+        int size(){
+        return size;
+        }
+   // empty stack or not 
+
+   boolean isEmpty(){
+    return top==null;
+   }
+}
+
+
 
 public class Day13 {
   public static void main(String[] args) {
-    MyStack mt = new MyStack(5);
-    mt.push(12);
-    mt.push(13);
-    mt.push(13);
-    mt.push(13);
-    mt.push(13);
-
-    mt.display();
-
+    
     
   }
 }
